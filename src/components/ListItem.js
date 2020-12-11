@@ -1,15 +1,15 @@
 import React from 'react'
 
 function ListItem (props) {
-    if (props.readonly == true) {
+    if (props.readonly === true) {
       return (
         <li 
         key={props.id}
-        className="list-item"
+        className="list__item list__shoppingList--item"
         value={props.title}
         >
-          <span>{props.title}</span>
-          <span>Amount: {props.amount}</span>
+          <span className="listItem__span">{props.title}</span>
+          <span className="listItem__span">Amount: {props.amount}</span>
         </li>
      )
     }
@@ -17,11 +17,11 @@ function ListItem (props) {
       return (
         <li 
         key={props.id}
-        className="list-item"
+        className="list__item list__groceryList--item"
         value={props.title}
-        onClick={() => {props.handleClickGroceryItem(props)}}
+        onClick={() => {props.handleClickGroceryItem({title: props.title, amount: 1})}}
         >
-          <span>{props.title}</span>
+          <span className="listitem__span">{props.title}</span>
 
         </li>
      )

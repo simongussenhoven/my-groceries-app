@@ -4,8 +4,8 @@ import Input from './Input'
 
 function GroceryList(props) {
     return (
-     <div className="list">
-      <h2>List of groceries</h2>
+     <div className="groceryList">
+    <h2 className="groceryList__header">List of groceries</h2>
      <Input handleSubmit={props.handleSubmit} />
      <List {...props} readonly = {props.readonly}/>   
      </div>

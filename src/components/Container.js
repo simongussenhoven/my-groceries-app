@@ -1,25 +1,23 @@
 import React from 'react'
 import GroceryList from './GroceryList'
-import ShoppingCart from './emptyCart'
+import ShoppingCart from './ShoppingCart'
 import Header from './Header'
 
 
-/* eslint-disable no-unused-expressions */
+
 
 class Container extends React.Component {
     constructor () {
         super()
         this.state = {
           groceryList: [
-            {title: "Appels", amount: 1},
-            {title: "Pak melk", amount: 1},
-            {title: "Choco", amount: 1},
-            {title: "Mangos", amount: 1}
+            {title: "Apples"},
+            {title: "Bread"},
+            {title: "Fries"}
           ],
           shoppingList: [
-            {title: "Bananen", amount: 1},
-            {title: "Kiwis", amount: 1},
-            {title: "Mangos", amount: 1},
+            {title: "Fries", amount: 1},
+            {title: "Burgers", amount: 1}
           ]
         }
         this.handleClickGroceryItem = this.handleClickGroceryItem.bind(this);
@@ -29,39 +27,43 @@ class Container extends React.Component {
 
       handleClickGroceryItem (newItem) {     
         let newShop = this.state.shoppingList;
-        let newGroc = this.state.groceryList;
-
-        console.log("shop var", newShop);
-        console.log("groc var", newGroc);
-        console.log(newItem);
+        let foundItem = false
         
-        for (let i=0; i<newShop.length; i++){
-            if(newItem.title === newShop[i].title){
-            newShop[i].amount += 1
-          }
-
-          else {
-            newShop.push({title: newItem.title, amount: 1});
-          }
-          this.setState(() => {
-            return {
-              shoppingList: newShop
-            }
-          })
+        for (let i=0;i<newShop.length;i++){
+          if (newShop[i].title === newItem.title){
+            newShop[i].amount++
+            foundItem = true
+            break;
+          }        
         }
-      }
+        
+        if(!foundItem){
+          newShop.push(newItem)
+        }
 
+        this.setState(() => {
+          return {
+            shoppingList: newShop
+          }
+        })
+      }
 
       handleSubmit (event) {
         event.preventDefault()
+        if (event.target.text.value !== "") {
         let newList = this.state.groceryList
             const newItem = {title: event.target.text.value, amount: 1}
             newList.push(newItem)
+            event.target.text.value = "";
         this.setState (() => {
           return {
             groceryList: newList
           }
         })
+      } 
+        else {
+          alert("Can't be blank")
+        }
       }
 
       emptyCart () {
@@ -77,17 +79,19 @@ class Container extends React.Component {
     return (
         <div id="container">
           <Header/>
-          <GroceryList 
-            handleSubmit = {this.handleSubmit}
-            handleClickGroceryItem = {this.handleClickGroceryItem} 
-            items={this.state.groceryList}
-            readonly = {false}
-          />
-          <ShoppingCart 
-            emptyCart = {this.emptyCart} 
-            items={this.state.shoppingList}
-            readonly = {true}
-          />
+          <main className="main">
+            <GroceryList 
+              handleSubmit = {this.handleSubmit}
+              handleClickGroceryItem = {this.handleClickGroceryItem} 
+              items={this.state.groceryList}
+              readonly = {false}
+            />
+            <ShoppingCart 
+              emptyCart = {this.emptyCart} 
+              items={this.state.shoppingList}
+              readonly = {true}
+            />
+          </main>
         </div>
     )
   }

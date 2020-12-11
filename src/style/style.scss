@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Yanone+Kaffeesatz:wght@300&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  //border: 1px dashed white;
+}
+
+body {
+  font-family: "Arvo", serif;
+  font-size: 18px;
+  background: black;
+  color: white;
+}
+
+header {
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+  &__h1 {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.groceryList {
+  flex-grow: 1;
+  .groceryList__header {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+    align-self: stretch;
+  }
+  .groceryList__form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.shoppingList {
+  flex-grow: 1;
+  .shoppingList__header {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  &__p {
+    text-align: center;
+  }
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+  &__label {
+    text-align: center;
+  }
+  &__container {
+    height: 35px;
+    margin-bottom: 10px;
+  }
+  &__input {
+    margin-top: 10px;
+    height: 30px;
+    text-align: center;
+  }
+  &__submit {
+    width: 60px;
+    height: 34px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  &__item {
+    list-style: none;
+    padding: 6px;
+    margin: 1px;
+    border: 1px solid black;
+    width: 90%;
+    text-align: center;
+    border-radius: 5px;
+  }
+  &__shoppingList--item {
+    background-color: #00ff00c4;
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 20px 6px 20px;
+    width: 82%;
+    &:nth-child(even) {
+      background-color: #00ff0079;
+    }
+  }
+  &__groceryList--item {
+    background-color: #ff00ff;
+    &:nth-child(even) {
+      background-color: #ff00ff9f;
+    }
+    cursor: pointer;
+  }
+}
+
+.clearContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  .clearButton {
+    height: 34px;
+    width: 220px;
+  }
+}
+
+@media (min-width: 480px) {
+  main {
+    flex-direction: row;
+  }
+  header {
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}

@@ -2,8 +2,8 @@ import React from 'react'
 
 function Clear(props) {
     return (
-    <div className="clearcontainer">
-        <button onClick={() => {props.emptyCart()}}>Clear</button>
+    <div className="clearContainer">
+        <button className="clearButton" onClick={() => {props.emptyCart()}}>Clear</button>
     </div>
     )
 }

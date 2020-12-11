@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Yanone+Kaffeesatz:wght@300&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font-family: "Arvo", serif;
+  font-size: 18px;
+  background: black;
+  color: white;
+}
+
+header {
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+header__h1 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.groceryList {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.groceryList .groceryList__header {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+.groceryList .groceryList__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.shoppingList {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.shoppingList .shoppingList__header {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.shoppingList__p {
+  text-align: center;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form__label {
+  text-align: center;
+}
+
+.form__container {
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+.form__input {
+  margin-top: 10px;
+  height: 30px;
+  text-align: center;
+}
+
+.form__submit {
+  width: 60px;
+  height: 34px;
+}
+
+.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
+}
+
+.list__item {
+  list-style: none;
+  padding: 6px;
+  margin: 1px;
+  border: 1px solid black;
+  width: 90%;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.list__shoppingList--item {
+  background-color: #00ff00c4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 6px 20px 6px 20px;
+  width: 82%;
+}
+
+.list__shoppingList--item:nth-child(even) {
+  background-color: #00ff0079;
+}
+
+.list__groceryList--item {
+  background-color: #ff00ff;
+  cursor: pointer;
+}
+
+.list__groceryList--item:nth-child(even) {
+  background-color: #ff00ff9f;
+}
+
+.clearContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.clearContainer .clearButton {
+  height: 34px;
+  width: 220px;
+}
+
+@media (min-width: 480px) {
+  main {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  header {
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
