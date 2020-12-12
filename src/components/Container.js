@@ -10,15 +10,8 @@ class Container extends React.Component {
     constructor () {
         super()
         this.state = {
-          groceryList: [
-            {title: "Apples"},
-            {title: "Bread"},
-            {title: "Fries"}
-          ],
-          shoppingList: [
-            {title: "Fries", amount: 1},
-            {title: "Burgers", amount: 1}
-          ]
+          groceryList: [],
+          shoppingList: []
         }
         this.handleClickGroceryItem = this.handleClickGroceryItem.bind(this);
         this.emptyCart = this.emptyCart.bind(this);
